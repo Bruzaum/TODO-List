@@ -1,0 +1,188 @@
+/* Principal */
+  
+:root {
+    --label-icon: url("https://cdn-icons-png.flaticon.com/128/5043/5043139.png");
+}
+  
+.dark-mode {
+    --bg-cor: black;
+    --fonte-cor: #ffffff;
+    --label-icon: url("https://cdn-icons-png.flaticon.com/128/5043/5043094.png");
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+}
+
+body {
+    min-height: calc(100vh - 50px);
+
+    background: var(--bg-cor);
+    /* color: var(--fonte-cor); */
+
+    user-select: none; 
+    transition: 2s;
+}
+
+.mudar-tema {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    background-image: var(--label-icon); 
+    background-size: 30px;
+    background-repeat: no-repeat;
+    padding: 17px;
+    cursor: pointer; 
+}
+  
+#btn {
+    display: none;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Novo Item */
+.adicionar {
+    padding-top: 1.25rem;
+    display: inline-flex;
+}
+
+.botao-adicionar {
+    display: flex;
+    cursor: pointer;
+    border: 2px solid;
+    border-radius: 0 10px 10px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+}
+
+
+#novo-item {
+    border: 2px solid;
+    font-size: 17px;
+    min-width: 30rem;
+    height: 2rem;
+    border-radius: 10px 0 0 10px;
+
+    text-align: center;
+}
+
+::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+
+    font-size: 15px;
+}
+
+/* Lista */
+
+.lista-itens {
+    margin: 0;
+    padding-top: 0.5rem;
+}
+
+.item {
+    border: solid 1px;
+    list-style: none;
+    padding: 0.6em;
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin: 0 0 1em;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    width: 39rem;
+    /* text-decoration: line-through; */
+}
+
+.checkbox {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    height: 25px;
+    width: 20px;
+    background-color: #eee;
+
+    cursor: pointer;
+}
+
+.checkbox:checked {
+    accent-color: black;
+}
+
+.botao-deletar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    color: red;
+    border: none;
+    background-color: white;
+}
+
+.item-adicionado {
+    margin-top: 5px;
+    width: 85%;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[contenteditable] {
+    outline: 0px solid transparent;
+}
+
+/* Rodape */
+footer {
+    position: absolute;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    width: 100%;
+
+    background-color:mintcream;
+}
+
+
+.fa {
+    font-size: 25px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+
+    margin-left: 6rem;
+  }
+  
+.fa:hover {
+    opacity: 0.8;
+}
+
+.fa-linkedin {
+    color: #3B5998;
+}
+
+.fa-github {
+    color: black;
+}
+
+.fa-instagram {
+    color: #125688;
+}

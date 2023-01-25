@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+    <head>
+        <link rel="stylesheet" href="./css/reset.css">
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+        <!-- Social Media Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Google Icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+        <title>TODO List</title>
+
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+
+    <body>
+        <main class="main">
+
+            <input id="btn" type="button">
+            <label for="btn" class="mudar-tema"></label>
+
+            <section class="adicionar">
+                <div class="adicionar-item" id="adicionar-item">
+                    <form action="" class="adicionar" id="adicionar-novo-item">
+                        <input type="text" name="novo-item" id="novo-item" placeholder="Adicionar um item">
+                        <button class="botao-adicionar">
+                            <span class="material-symbols-outlined">
+                                add_box
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </section>
+    
+            <section class="lista">
+                <ul class="lista-itens" id="lista-itens">
+                    <li class="item">
+                        <input type="checkbox" class="checkbox">
+                        <p contenteditable="true" class="item-adicionado">Caderno</p>
+                        <button class="botao-deletar">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+                    </li>
+
+                    <li class="item">
+                        <input type="checkbox" class="checkbox">
+                        <p contenteditable="true" class="item-adicionado">Borracha</p>
+                        <button class="botao-deletar">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+
+        
+
+        <footer class="rodape">
+            <p>Bruno Camerin Santarém &copy; 2023</p>
+            <a href="https://www.linkedin.com/in/bruno-santarem-bbb2aa1ab/" target="_blank" rel="noopener noreferrer" class="fa fa-linkedin"> </a>   
+            <a href="https://www.github.com/Bruzaum" target="_blank" rel="noopener noreferrer" class="fa fa-github"> </a> 
+            <a href="https://www.instagram.com/brunosantarem/" target="_blank" rel="noopener noreferrer" class="fa fa-instagram"> </a>   
+        </footer>
+
+        <script src="./js/main.js"></script>
+    </body>
+</html>
+
