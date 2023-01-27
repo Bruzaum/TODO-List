@@ -12,17 +12,22 @@
 
 html {
     font-family: 'Montserrat', sans-serif;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 body {
-    min-height: calc(100vh - 50px);
+    /* min-height: calc(100vh - 50px); */
+    min-height: 100vh;
 
     background: var(--bg-cor);
     /* color: var(--fonte-cor); */
 
     user-select: none; 
     transition: 2s;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .mudar-tema {
@@ -43,6 +48,7 @@ body {
 .main {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
@@ -69,7 +75,8 @@ body {
 #novo-item {
     border: 2px solid;
     font-size: 17px;
-    min-width: 30rem;
+    width: 30rem;
+    min-width: 5rem;
     height: 2rem;
     border-radius: 10px 0 0 10px;
 
@@ -84,6 +91,10 @@ body {
 }
 
 /* Lista */
+
+.lista {
+    margin-bottom: 50px;
+}
 
 .lista-itens {
     margin: 0;
@@ -102,7 +113,6 @@ body {
     justify-content: space-between;
     font-size: 20px;
     width: 39rem;
-    /* text-decoration: line-through; */
 }
 
 .checkbox {
@@ -147,8 +157,9 @@ body {
 
 /* Rodape */
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    margin-top: 20px;
 
     display: flex;
     justify-content: center;
@@ -185,4 +196,46 @@ footer {
 
 .fa-instagram {
     color: #125688;
+}
+
+
+@media screen and (max-width: 900px){
+    .adicionar {
+        max-width: 25rem;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .adicionar {
+        max-width: 15rem;
+    }
+
+    .item {
+        max-width: 18rem;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        margin-top: 20px;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        height: 100px;
+        width: 100%;
+    
+        background-color:mintcream;
+    }
+
+    .copyright {
+        margin-bottom: 12px;
+    }
+
+    .fa {
+        margin-left: 2rem;
+      }
+      
 }
