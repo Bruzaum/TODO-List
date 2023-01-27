@@ -13,18 +13,6 @@ itens.forEach( (elemento) => {
     criaElemento(elemento)
 })
 
-// p.addEventListener("load", (evento) => {
-//     evento.preventDefault()
-
-//     const itemAlterado = evento.target.elements['item-adicionado']
-
-//     console.log(p)
-
-//     //localStorage.setItem("itens", JSON.stringify(itens))
-
-// })
-
-
 form.addEventListener("submit", (evento) => {
     evento.preventDefault()
 

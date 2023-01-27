@@ -12,15 +12,12 @@
 
 html {
     font-family: 'Montserrat', sans-serif;
-    /* min-height: 100vh; */
 }
 
 body {
-    /* min-height: calc(100vh - 50px); */
     min-height: 100vh;
 
     background: var(--bg-cor);
-    /* color: var(--fonte-cor); */
 
     user-select: none; 
     transition: 2s;
