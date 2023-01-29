@@ -2,10 +2,13 @@ document.querySelector("#btn").addEventListener("click", () => {
     document.body.classList.toggle("dark-mode")
 })
 
+var deletados = new Array();
+var naoDeletados = new Array();
+
+
 const form = document.querySelector("#adicionar-novo-item")
 const lista = document.getElementById("lista-itens")
 const p = document.querySelector(".item-adicionado")
-
 
 const itens = JSON.parse(localStorage.getItem("itens")) || []
 
@@ -13,7 +16,9 @@ itens.forEach( (elemento) => {
     criaElemento(elemento)
 })
 
+
 form.addEventListener("submit", (evento) => {
+
     evento.preventDefault()
 
     const descricao = evento.target.elements['novo-item']
@@ -28,6 +33,7 @@ form.addEventListener("submit", (evento) => {
         itemAtual.id = existe.id
 
         itens[itens.findIndex(elemento => elemento.id === existe.id)] = itemAtual
+
     } else {
         itemAtual.id =  itens[itens.length - 1] ? itens[itens.length - 1].id + 1 : 0
 
@@ -58,13 +64,16 @@ function criaElemento(item) {
     novoItem.appendChild(botaoDeleta(item.id))
 
     lista.appendChild(novoItem)
+
+    naoDeletados.push(item.id)
 }
 
 function botaoCheckbox(id) {
 
     const inputCheckbox = document.createElement("INPUT")
     inputCheckbox.setAttribute("type", "checkbox")
-    inputCheckbox.classList.add("checkbox")
+    inputCheckbox.setAttribute("id", id)
+    inputCheckbox.classList.add("box")
 
     inputCheckbox.addEventListener("change", function() {
         if (this.checked) {
@@ -101,5 +110,59 @@ function deletaElemento(tag, id) {
     itens.splice(itens.findIndex(elemento => (elemento.id) === id), 1)
 
     localStorage.setItem("itens", JSON.stringify(itens))
+    localStorage.removeItem("id=" + String(id))
+    deletados.push(id)
+
+    naoDeletados.splice(naoDeletados.indexOf(id), 1)
 }
 
+
+function save() {	
+    for(let i = 0; i < itens.length; i++){
+        if(naoDeletados.includes(i)) {
+            var checkbox = document.getElementById(String(i));
+        
+            localStorage.setItem("id=" + String(i), checkbox.checked);
+    
+            if (checkbox.checked) {
+                document.querySelector("[data-id='"+i+"']").style.textDecoration = "line-through"
+            }else {
+                document.querySelector("[data-id='"+i+"']").style.textDecoration = "none"
+            }
+        }
+    }
+}
+
+
+for(let i = 0; i < itens.length; i++){
+    if(localStorage.length > 0){
+        if(naoDeletados.includes(i)){
+            var checked = JSON.parse(localStorage.getItem("id=" + String(i)));
+            document.getElementById(String(i)).checked = checked;
+        }
+    }
+}
+
+"change load click".split(" ").forEach(function(e){
+    window.addEventListener(e, save);
+});
+
+// Tentando salvar no localStorage a atualização do p
+
+/*
+function atualizaDescricao(id){
+    //itens.findIndex(elemento => elemento.id === existe.id)
+
+    const descricao = document.querySelector("[data-id='"+id+"']")
+
+    //localStorage.setItem("itens", JSON.stringify(itens))
+
+    // console.log(descricao.value)
+    console.log(document.querySelector("[data-id='"+id+"']"))
+}
+
+
+"load".split(" ").forEach(function(e){
+    window.addEventListener(e, atualizaDescricao(3));
+});
+*/

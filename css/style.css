@@ -112,7 +112,7 @@ body {
     width: 39rem;
 }
 
-.checkbox {
+.box {
     margin-top: auto;
     margin-bottom: auto;
 
@@ -123,7 +123,7 @@ body {
     cursor: pointer;
 }
 
-.checkbox:checked {
+.box:checked {
     accent-color: black;
 }
 
