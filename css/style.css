@@ -129,12 +129,7 @@ body {
 
     cursor: pointer;
 }
-/*
-.box:checked {
-    accent-color: white;
-    color: #01394c;
-}
-*/
+
 .botao-deletar {
     display: flex;
     justify-content: center;
@@ -205,6 +200,12 @@ footer {
     color: #f09433;
 }
 
+@media screen and (min-width: 901px){
+    .box:checked {
+        accent-color: white;
+        color: #01394c;
+    }
+}
 
 @media screen and (max-width: 900px){
     .adicionar {
