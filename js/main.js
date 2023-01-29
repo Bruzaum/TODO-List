@@ -6,6 +6,7 @@ var deletados = new Array();
 var naoDeletados = new Array();
 
 
+
 const form = document.querySelector("#adicionar-novo-item")
 const lista = document.getElementById("lista-itens")
 const p = document.querySelector(".item-adicionado")
@@ -15,7 +16,6 @@ const itens = JSON.parse(localStorage.getItem("itens")) || []
 itens.forEach( (elemento) => {
     criaElemento(elemento)
 })
-
 
 form.addEventListener("submit", (evento) => {
 
@@ -78,8 +78,10 @@ function botaoCheckbox(id) {
     inputCheckbox.addEventListener("change", function() {
         if (this.checked) {
             document.querySelector("[data-id='"+id+"']").style.textDecoration = "line-through"
+            document.querySelector("[data-id='"+id+"']").setAttribute("contenteditable", "false")
         }else {
             document.querySelector("[data-id='"+id+"']").style.textDecoration = "none"
+            document.querySelector("[data-id='"+id+"']").setAttribute("contenteditable", "true")
         }
     })
 
@@ -118,7 +120,7 @@ function deletaElemento(tag, id) {
 
 
 function save() {	
-    for(let i = 0; i < itens.length; i++){
+    for(let i = 0; i <= naoDeletados[naoDeletados.length - 1]; i++){
         if(naoDeletados.includes(i)) {
             var checkbox = document.getElementById(String(i));
         
@@ -126,15 +128,17 @@ function save() {
     
             if (checkbox.checked) {
                 document.querySelector("[data-id='"+i+"']").style.textDecoration = "line-through"
+                document.querySelector("[data-id='"+i+"']").setAttribute("contenteditable", "false")
             }else {
                 document.querySelector("[data-id='"+i+"']").style.textDecoration = "none"
+                document.querySelector("[data-id='"+i+"']").setAttribute("contenteditable", "true")
             }
         }
     }
 }
 
 
-for(let i = 0; i < itens.length; i++){
+for(let i = 0; i <= naoDeletados[naoDeletados.length - 1]; i++){
     if(localStorage.length > 0){
         if(naoDeletados.includes(i)){
             var checked = JSON.parse(localStorage.getItem("id=" + String(i)));
@@ -149,20 +153,26 @@ for(let i = 0; i < itens.length; i++){
 
 // Tentando salvar no localStorage a atualização do p
 
-/*
-function atualizaDescricao(id){
-    //itens.findIndex(elemento => elemento.id === existe.id)
 
-    const descricao = document.querySelector("[data-id='"+id+"']")
+function atualizaDescricao(){
+    var itensArrayEditados = new Array();
+    
+    for(let i = 0; i <= naoDeletados[naoDeletados.length - 1]; i++){
+        
+        if(naoDeletados.includes(i)) {
+            const pEditado = document.querySelector("[data-id='"+i+"']")
+            const itensEditados = {
+                "descricao": pEditado.textContent,
+                "id": i
+            }
+            itensArrayEditados.push(itensEditados)
+        }
+    }
 
-    //localStorage.setItem("itens", JSON.stringify(itens))
-
-    // console.log(descricao.value)
-    console.log(document.querySelector("[data-id='"+id+"']"))
+    localStorage.setItem("itens", JSON.stringify(itensArrayEditados))
 }
 
 
-"load".split(" ").forEach(function(e){
-    window.addEventListener(e, atualizaDescricao(3));
+"change load click mouseover".split(" ").forEach(function(e){
+    window.addEventListener(e, atualizaDescricao);
 });
-*/
