@@ -1,5 +1,5 @@
 document.querySelector("#btn").addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode")
+    document.body.classList.toggle("light-mode")
 })
 
 var deletados = new Array();

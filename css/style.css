@@ -1,13 +1,16 @@
 /* Principal */
-  
+
 :root {
-    --label-icon: url("https://cdn-icons-png.flaticon.com/128/5043/5043139.png");
+    --label-icon: url("https://cdn-icons-png.flaticon.com/128/5817/5817869.png");
+
+    /* --bg-img: linear-gradient(100deg, #001214, #001f29); */
+    --bg-img: linear-gradient(100deg, #575656, #062e3f);
 }
   
-.dark-mode {
-    --bg-cor: black;
+.light-mode {
+    --bg-img: linear-gradient(100deg, #d4f1ff, #ffffff);;
     --fonte-cor: #ffffff;
-    --label-icon: url("https://cdn-icons-png.flaticon.com/128/5043/5043094.png");
+    --label-icon: url("https://cdn-icons-png.flaticon.com/128/6048/6048363.png");
 }
 
 html {
@@ -17,10 +20,14 @@ html {
 body {
     min-height: 100vh;
 
-    background: var(--bg-cor);
+    /* background-image: linear-gradient(100deg, #001214, #001f29);
+    color: white; */
+
+    background: var(--bg-img);
 
     user-select: none; 
-    transition: 2s;
+    transition: 0.5s linear;
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
@@ -52,25 +59,28 @@ body {
 /* Novo Item */
 .adicionar {
     padding-top: 1.25rem;
+    padding-bottom: 0.5rem;
     display: inline-flex;
 }
 
 .botao-adicionar {
     display: flex;
     cursor: pointer;
-    border: 2px solid;
+    border: none;
     border-radius: 0 10px 10px 0;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: white;
+    background-color: #01394c;
+    color: white;
 }
 
 
 #novo-item {
     border: 2px solid;
+    border-color: #01394c;
     font-size: 17px;
     width: 30rem;
     min-width: 5rem;
@@ -102,8 +112,9 @@ body {
     border: solid 1px;
     list-style: none;
     padding: 0.6em;
-    background: #FFFFFF;
-    border-radius: 10px;
+    background-color: #01394c;
+    color: white;
+    border-radius: 30px;
     margin: 0 0 1em;
     box-sizing: border-box;
     display: flex;
@@ -124,7 +135,8 @@ body {
 }
 
 .box:checked {
-    accent-color: black;
+    accent-color: white;
+    color: #01394c;
 }
 
 .botao-deletar {
@@ -133,9 +145,9 @@ body {
     align-items: center;
     cursor: pointer;
 
-    color: red;
+    color: white;
     border: none;
-    background-color: white;
+    background-color: #01394c;
 }
 
 .item-adicionado {
@@ -165,7 +177,10 @@ footer {
     height: 50px;
     width: 100%;
 
-    background-color:mintcream;
+    background-color:#01394c;
+    /* background-image: linear-gradient(100deg, #575656, #062e3f); */
+    /* background-image: linear-gradient(100deg, #001214, #001f29); */
+    color: white;
 }
 
 
@@ -188,11 +203,12 @@ footer {
 }
 
 .fa-github {
-    color: black;
+    color: white;
 }
 
 .fa-instagram {
-    color: #125688;
+    /* color: #125688; */
+    color: #f09433;
 }
 
 
