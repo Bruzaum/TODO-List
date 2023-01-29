@@ -135,6 +135,12 @@ body {
     color: #01394c;
 }
 
+input[type=checkbox]{
+    opacity:1;
+    position: relative;
+    width:auto;
+}
+
 .botao-deletar {
     display: flex;
     justify-content: center;
