@@ -173,6 +173,6 @@ function atualizaDescricao(){
 }
 
 
-"change load click mouseover touchend".split(" ").forEach(function(e){
+"change load click mouseover touchstart touchend touchmove touchcancel".split(" ").forEach(function(e){
     window.addEventListener(e, atualizaDescricao);
 });
