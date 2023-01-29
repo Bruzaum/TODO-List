@@ -147,7 +147,7 @@ for(let i = 0; i <= naoDeletados[naoDeletados.length - 1]; i++){
     }
 }
 
-"change load click".split(" ").forEach(function(e){
+"change load click touchend".split(" ").forEach(function(e){
     window.addEventListener(e, save);
 });
 
@@ -173,6 +173,6 @@ function atualizaDescricao(){
 }
 
 
-"change load click mouseover".split(" ").forEach(function(e){
+"change load click mouseover touchend".split(" ").forEach(function(e){
     window.addEventListener(e, atualizaDescricao);
 });
